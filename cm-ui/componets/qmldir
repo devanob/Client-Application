@@ -1,0 +1,3 @@
+module components
+NavMenuComponet 1.0 NavMenuComponet.qml
+NavigationBar 1.0 NavigationBar.qml

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file alias="Style.qml">assets/Style.qml</file>
+        <file alias="qmldir">assets/qmldir</file>
+        <file alias="fontawesome.ttf">assets/fontawesome-webfont.ttf</file>
+        <file alias="NavBarStyling.qml">assets/NavBarStyling.qml</file>
+        <file alias="NavItemStyling.qml">assets/NavItemStyling.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,3 @@
+module assets
+singleton NavBarStyling 1.0 NavBarStyling.qml
+singleton NavItemStyling 1.0 NavItemStyling.qml

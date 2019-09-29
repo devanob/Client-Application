@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/componets">
+        <file alias="NavMenuComponet.qml">componets/NavMenuComponet.qml</file>
+        <file alias="NavigationBar.qml">componets/NavigationBar.qml</file>
+        <file alias="qmldir">componets/qmldir</file>
+    </qresource>
+</RCC>
