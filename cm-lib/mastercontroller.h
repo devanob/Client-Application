@@ -6,6 +6,7 @@
 #include <navigationcontroller.h>
 #include <QString>
 #include <QScopedPointer>
+#include <memory>
 namespace cm {
 namespace controllers {
 
@@ -19,14 +20,14 @@ namespace controllers {
 
     public:
         explicit MasterController(QObject* parent = nullptr);
-        const QString& welcomeMessage() const;
+        const QString & welcomeMessage() const;
         NavigationController* navigationController();
         ~MasterController();
     public slots: // slots are public methods available in QML
         void doSomething(const QString &text);
     private:
         class Implementation;
-     QScopedPointer<Implementation> implementation;
+     std::unique_ptr<Implementation> implementation;
     };
 
 //

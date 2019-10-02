@@ -14,7 +14,7 @@ class MasterController::Implementation{
         MasterController* masterController{nullptr};
         NavigationController* navigationController{nullptr};
         QString welcomeMessage = "This is MasterController to Major Tom";
-};
+        };
 
 }}
 
