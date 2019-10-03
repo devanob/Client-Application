@@ -1,4 +1,4 @@
-#include "mastercontroller.h"
+#include "source/controllers/mastercontroller.h"
 
 
 
@@ -13,7 +13,7 @@ class MasterController::Implementation{
         }
         MasterController* masterController{nullptr};
         NavigationController* navigationController{nullptr};
-        QString welcomeMessage = "This is MasterController to Major Tom";
+        QString welcomeMessage = "Welcome to The Cleint Application";
         };
 
 }}

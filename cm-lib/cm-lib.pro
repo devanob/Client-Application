@@ -22,16 +22,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += source
+
 SOURCES += \
-        client.cpp \
-        mastercontroller.cpp \
-        navigationcontroller.cpp
+        source/LibClasses/libcommand.cpp \
+        source/controllers/commandcontroller.cpp \
+        source/controllers/mastercontroller.cpp \
+        source/controllers/navigationcontroller.cpp \
+        source/models/client.cpp
 
 HEADERS += \
-        client.h \
         cm-lib_global.h  \
-        mastercontroller.h \
-        navigationcontroller.h
+        source/LibClasses/libcommand.h \
+        source/controllers/commandcontroller.h \
+        source/controllers/mastercontroller.h \
+        source/controllers/navigationcontroller.h \
+        source/models/client.h
 
 unix {
     target.path = /usr/lib

@@ -31,14 +31,16 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += ../cm-lib/
 
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../build-cm-Desktop_Qt_5_12_3_clang_64bit-Debug/cm-lib/release/ -lcm-lib.1.0.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../build-cm-Desktop_Qt_5_12_3_clang_64bit-Debug/cm-lib/debug/ -lcm-lib.1.0.0
-else:unix: LIBS += -L$$PWD/../../build-cm-Desktop_Qt_5_12_3_clang_64bit-Debug/cm-lib/ -lcm-lib.1.0.0
-
-INCLUDEPATH += $$PWD/../../build-cm-Desktop_Qt_5_12_3_clang_64bit-Debug/cm-lib
-DEPENDPATH += $$PWD/../../build-cm-Desktop_Qt_5_12_3_clang_64bit-Debug/cm-lib
 
 DISTFILES +=
+
+
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../cm-lib/release/ -lcm-lib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../cm-lib/debug/ -lcm-lib
+else:unix: LIBS += -L$$OUT_PWD/../cm-lib/ -lcm-lib
+
+INCLUDEPATH += $$PWD/../cm-lib
+DEPENDPATH += $$PWD/../cm-lib

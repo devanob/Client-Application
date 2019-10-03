@@ -2,7 +2,7 @@
 #define NAVIGATIONCONTROLLER_H
 #include <cm-lib_global.h>
 #include <QObject>
-#include <client.h>
+#include "source/models/client.h"
 
 namespace cm {
 namespace controllers {

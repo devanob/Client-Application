@@ -3,9 +3,8 @@
 
 #include <QObject>
 #include <cm-lib_global.h>
-#include <navigationcontroller.h>
+#include "source/controllers/navigationcontroller.h"
 #include <QString>
-#include <QScopedPointer>
 #include <memory>
 namespace cm {
 namespace controllers {
@@ -27,7 +26,7 @@ namespace controllers {
         void doSomething(const QString &text);
     private:
         class Implementation;
-     std::unique_ptr<Implementation> implementation;
+        std::unique_ptr<Implementation> implementation;
     };
 
 //

@@ -10,7 +10,7 @@ Item{
              anchors.centerIn: parent
              text: masterController.ui_welcomeMessage
          }
-         color: Style.colourBackground
+         color: "black"
     }
 }
 
