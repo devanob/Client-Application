@@ -5,7 +5,8 @@
 #include <QObject>
 #include <memory>
 #include <QVector>
-
+#include <QList>
+#include <QtQml/QQmlListProperty>
 //using namepsace
 using namespace cm::LibClasses;
 namespace cm  {
@@ -16,6 +17,7 @@ namespace controllers {
     public:
         explicit CommandController(QObject *parent = nullptr);
         ~CommandController();
+        QQmlListProperty<LibCommand> ui_commands();
     private:
         class Implementation;
         //internel implemenation of this controller

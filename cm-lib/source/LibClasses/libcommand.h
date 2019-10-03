@@ -19,7 +19,7 @@ namespace LibClasses {
         //signal connection
 
         public:
-            explicit LibCommand(QObject* parent = nullptr, QString type="None",
+            explicit LibCommand(QObject* parent = nullptr, QString type="default",
                                 QString description="None",
                                 QString iconSymbol="None",
                                 std::function<bool()> isActive =[](){ return true;},
@@ -29,16 +29,17 @@ namespace LibClasses {
                                     }
                                 );
             ~LibCommand();
+        const QString& type() const;
+        const QString& iconSymbol() const;
+        const QString& description() const;
+
+        bool isActive() const;
        public slots:
            void executeProcedureHandlier();
 
          private:
             class Implementation;
             std::unique_ptr<Implementation> implementation;
-            const QString type();
-            const QString& iconSymbol() const;
-            const QString& description() const;
-            bool isActive() const;
         signals:
             void isActiveChanged();
             void executed();

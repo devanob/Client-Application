@@ -11,20 +11,33 @@ class CommandController::Implementation{
                     emit this->parentController->commandContextChanged();
                 }
             });
+            setCurrentTypeRequest();
         }
         bool setCurrentTypeRequest(QString type="default"){
             this->currentTypeRequest = type;
+            QList<LibCommand*> contextCommands;
+            for (LibCommand* com : this->commandList){
+                if (com->type() == this->currentTypeRequest){
+                    contextCommands.append(com);
+                }
+            }
+            this->currentCommandList = contextCommands;
             return true;
         }
         ~Implementation(){
 
 
         }
-    private:
+        void setUp(){
+
+        }
+        void addCommands(){
+
+        }
         CommandController* parentController =nullptr;
-        QVector<LibCommand*> commandList;
+        QList<LibCommand*> commandList{};
         //generate from commandlist depends on currentRequestType
-        QVector<LibCommand*> currentCommandList;
+        QList<LibCommand*> currentCommandList{};
         //
         QString currentTypeRequest="default";
 
@@ -43,6 +56,11 @@ cm::controllers::CommandController::CommandController(QObject *parent) : QObject
 cm::controllers::CommandController::~CommandController()
 {
 
+}
+
+QQmlListProperty<LibCommand> cm::controllers::CommandController::ui_commands()
+{
+    return QQmlListProperty<LibCommand>(this,this->implementation->currentCommandList);
 }
 
 
