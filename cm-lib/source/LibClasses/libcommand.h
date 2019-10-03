@@ -16,8 +16,10 @@ namespace LibClasses {
         Q_PROPERTY( QString ui_description READ description CONSTANT )
         //Notifies The Ui if the isActice has chnaged
         Q_PROPERTY( bool ui_isActive READ isActive NOTIFY isActiveChanged)
+        //signal connection
+
         public:
-            explicit LibCommand(QObject* parent = nullptr, QString name="None",
+            explicit LibCommand(QObject* parent = nullptr, QString type="None",
                                 QString description="None",
                                 QString iconSymbol="None",
                                 std::function<bool()> isActive =[](){ return true;},
@@ -27,17 +29,21 @@ namespace LibClasses {
                                     }
                                 );
             ~LibCommand();
+       public slots:
+           void executeProcedureHandlier();
 
          private:
             class Implementation;
             std::unique_ptr<Implementation> implementation;
-            const QString name();
+            const QString type();
             const QString& iconSymbol() const;
             const QString& description() const;
             bool isActive() const;
         signals:
             void isActiveChanged();
             void executed();
+
+
 
 
     };

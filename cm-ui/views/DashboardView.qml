@@ -8,6 +8,7 @@ Item{
              anchors.centerIn: parent
              text: "Dashoard View"
          }
+
     }
 }
 

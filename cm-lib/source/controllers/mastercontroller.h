@@ -1,11 +1,12 @@
 #ifndef MASTERCONTROLLER_H
 #define MASTERCONTROLLER_H
-
+#include <memory>
 #include <QObject>
 #include <cm-lib_global.h>
 #include "source/controllers/navigationcontroller.h"
 #include <QString>
-#include <memory>
+
+
 namespace cm {
 namespace controllers {
 

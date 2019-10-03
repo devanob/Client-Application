@@ -7,7 +7,7 @@ namespace LibClasses  {
             public:
                 Implementation(QString name, QString description, QString iconSymbol,
                 std::function<bool()> isActive, std::function<void()> executeProcedure){
-                    this->name= name;
+                    this->type= name;
                     this->description = description;
                     this->iconSymbol = iconSymbol;
                     this->isActive = isActive;
@@ -16,7 +16,7 @@ namespace LibClasses  {
 
 
                 }
-             QString name;
+             QString type;
              QString iconSymbol;
              QString description;
              std::function<bool()> isActive;
@@ -26,20 +26,26 @@ namespace LibClasses  {
 }
 
 
-cm::LibClasses::LibCommand::LibCommand(QObject* parent, QString name, QString description, QString iconSymbol,
+cm::LibClasses::LibCommand::LibCommand(QObject* parent, QString type, QString description, QString iconSymbol,
                                        std::function<bool()> isActive,
                                        std::function<void()> executeProcedure
                                         ) :  QObject(parent){
-    this->implementation.reset(new Implementation(name,description, iconSymbol, isActive, executeProcedure));
+    this->implementation.reset(new Implementation(type,description, iconSymbol, isActive, executeProcedure));
+    connect(this,&LibCommand::executed, this, &LibCommand::executeProcedureHandlier);
 }
 
 cm::LibClasses::LibCommand::~LibCommand(){
-
+    disconnect(this,&LibCommand::executed, this, &LibCommand::executeProcedureHandlier);
 }
 
-const QString cm::LibClasses::LibCommand::name()
+void cm::LibClasses::LibCommand::executeProcedureHandlier()
 {
-    return this->implementation->name;
+    this->implementation->executeProcedure();
+}
+
+const QString cm::LibClasses::LibCommand::type()
+{
+    return this->implementation->type;
 }
 
 const QString &cm::LibClasses::LibCommand::iconSymbol() const
