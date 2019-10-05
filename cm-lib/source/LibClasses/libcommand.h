@@ -12,7 +12,7 @@ namespace LibClasses {
     class CMLIBSHARED_EXPORT LibCommand : public QObject
     {
         Q_OBJECT
-        Q_PROPERTY( QString ui_command_name READ iconSymbol CONSTANT )
+        Q_PROPERTY( QString ui_command_icon READ iconSymbol CONSTANT )
         Q_PROPERTY( QString ui_description READ description CONSTANT )
         //Notifies The Ui if the isActice has chnaged
         Q_PROPERTY( bool ui_isActive READ isActive NOTIFY isActiveChanged)
@@ -20,8 +20,8 @@ namespace LibClasses {
 
         public:
             explicit LibCommand(QObject* parent = nullptr, QString type="default",
-                                QString description="None",
-                                QString iconSymbol="None",
+                                QString description="Default",
+                                QString iconSymbol="Default",
                                 std::function<bool()> isActive =[](){ return true;},
                                 std::function<void()> executeProcedure =[](){
                                 std::cout << "executed" << std::endl;

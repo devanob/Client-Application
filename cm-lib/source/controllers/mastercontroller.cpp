@@ -8,11 +8,19 @@ namespace controllers {
 class MasterController::Implementation{
     public:
         Implementation(MasterController* _masterController) : masterController(_masterController){
-            navigationController = new NavigationController(masterController);
+            this->navigationController.reset(new NavigationController(masterController));
+            this->commanndController.reset(new CommandController(masterController));
+            this->commanndController->addCommands("dashboard","Save","\uf0c7",[](){
+                return true;}
+           ,[](){
+                std::cout << "This Executed" << std::endl;
+            });
+
 
         }
         MasterController* masterController{nullptr};
-        NavigationController* navigationController{nullptr};
+        std::unique_ptr<NavigationController> navigationController{nullptr};
+        std::unique_ptr<CommandController> commanndController{nullptr};
         QString welcomeMessage = "Welcome to The Cleint Application";
         };
 
@@ -33,9 +41,11 @@ cm::controllers::MasterController::~MasterController(){
 
 cm::controllers::NavigationController* cm::controllers::MasterController::navigationController()
 {
- return implementation->navigationController;
+ return implementation->navigationController.get();
 }
 
-void cm::controllers::MasterController::doSomething(const QString &text){
-
+cm::controllers::CommandController* cm::controllers::MasterController::commandController(){
+    return implementation->commanndController.get();
 }
+
+

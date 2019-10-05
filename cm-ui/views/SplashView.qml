@@ -2,6 +2,12 @@ import QtQuick 2.9
 import assets.Style 1.0
 import componets 1.0
 Item{
+    Connections {
+
+        target: masterController.ui_commandController
+
+
+    }
     id: element
 
     Rectangle {

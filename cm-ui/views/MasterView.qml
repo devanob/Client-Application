@@ -18,6 +18,7 @@ Window {
         onGoEditClientView:contentFrame.push("qrc:/views/EditClientView.qml", {selectedClient:client})
 
         onGoFindClientView:contentFrame.push("qrc:/views/FindClientView.qml")
+
     }
     id: window
     visible: true

@@ -1,5 +1,5 @@
 import QtQuick 2.0
-
+import QtQuick.Dialogs 1.0
 Item{
     Rectangle{
          anchors.fill: parent
@@ -8,6 +8,7 @@ Item{
              anchors.centerIn: parent
              text: "Edit Card"
          }
+
     }
 }
 

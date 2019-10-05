@@ -76,6 +76,7 @@ Item {
                 onNavigationButtonClicked:
                 masterController.ui_navigationController.goFindClientView();
             }
+
             NavMenuComponet {
                 id: backMenu
                 iconCharacter:"\uf060"

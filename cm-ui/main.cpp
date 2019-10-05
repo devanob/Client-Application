@@ -18,8 +18,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     qmlRegisterType<cm::controllers::MasterController>("CM", 1 , 0 , "MasterController");
     qmlRegisterType<cm::controllers::NavigationController>("CM", 1, 0,"NavigationController");
-    qmlRegisterType<cm::LibClasses::LibCommand>("CM", 1, 0,"Command");
     qmlRegisterType<cm::controllers::CommandController>("CM", 1, 0,"CommandController");
+    qmlRegisterType<cm::LibClasses::LibCommand>("CM", 1, 0,"Command");
+    //qmlRegisterType<QQmlListProperty<cm::LibClasses::LibCommand> >("CM", 1, 0,"CommandList");
     cm::controllers::MasterController masterController;
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:");

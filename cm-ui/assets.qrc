@@ -5,5 +5,6 @@
         <file alias="fontawesome.ttf">assets/fontawesome-webfont.ttf</file>
         <file alias="NavBarStyling.qml">assets/NavBarStyling.qml</file>
         <file alias="NavItemStyling.qml">assets/NavItemStyling.qml</file>
+        <file alias="ComandBarStyling.qml">assets/ComandBarStyling.qml</file>
     </qresource>
 </RCC>

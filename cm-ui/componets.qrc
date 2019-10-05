@@ -3,5 +3,7 @@
         <file alias="NavMenuComponet.qml">componets/NavMenuComponet.qml</file>
         <file alias="NavigationBar.qml">componets/NavigationBar.qml</file>
         <file alias="qmldir">componets/qmldir</file>
+        <file alias="CommandBar.qml">componets/CommandBar.qml</file>
+        <file alias="CommandButton.qml">componets/CommandButton.qml</file>
     </qresource>
 </RCC>

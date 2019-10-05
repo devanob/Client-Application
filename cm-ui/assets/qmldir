@@ -1,3 +1,4 @@
 module assets
 singleton NavBarStyling 1.0 NavBarStyling.qml
 singleton NavItemStyling 1.0 NavItemStyling.qml
+singleton ComandBarStyling 1.0 ComandBarStyling.qml
