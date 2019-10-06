@@ -25,6 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 INCLUDEPATH += source
 
 SOURCES += \
+        source/Data/data-decorator.cpp \
+        source/Data/date-time-decorator.cpp \
+        source/Data/int-decorator.cpp \
+        source/Data/string-decorator.cpp \
         source/LibClasses/libcommand.cpp \
         source/controllers/commandcontroller.cpp \
         source/controllers/mastercontroller.cpp \
@@ -33,6 +37,10 @@ SOURCES += \
 
 HEADERS += \
         cm-lib_global.h  \
+        source/Data/data-decorator.h \
+        source/Data/date-time-decorator.h \
+        source/Data/int-decorator.h \
+        source/Data/string-decorator.h \
         source/LibClasses/libcommand.h \
         source/controllers/commandcontroller.h \
         source/controllers/mastercontroller.h \

@@ -2,14 +2,8 @@ import QtQuick 2.0
 import componets 1.0;
 import assets 1.0;
 Item{
-    Connections {
+    z: 0
 
-        target: masterController.ui_commandController
-        onCommandContextChanged : console.log("command changed")
-
-
-
-    }
     Rectangle{
          anchors.fill: parent
          color: "#fda2a2"
@@ -18,9 +12,11 @@ Item{
              text: "Dashoard View"
          }
          CommandBar {
-            commandList:masterController.ui_commandController.ui_commands
-            commandContext : "dashboard"
+             z: 1
+             commandList:masterController.ui_commandController.ui_commands
+             commandContext : "dashboard"
          }
+
 
 
 //         MouseArea {
@@ -32,3 +28,10 @@ Item{
 
 }
 
+
+
+
+/*##^## Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+ ##^##*/

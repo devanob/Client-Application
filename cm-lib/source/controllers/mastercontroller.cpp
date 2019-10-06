@@ -10,10 +10,20 @@ class MasterController::Implementation{
         Implementation(MasterController* _masterController) : masterController(_masterController){
             this->navigationController.reset(new NavigationController(masterController));
             this->commanndController.reset(new CommandController(masterController));
-            this->commanndController->addCommands("dashboard","Save","\uf0c7",[](){
+            this->commanndController->addCommands("create-client","Save","\uf0c7",[](){
                 return true;}
            ,[](){
-                std::cout << "This Executed" << std::endl;
+                std::cout << "save stuff " << std::endl;
+            });
+            this->commanndController->addCommands("dashboard","opendash","\uf210",[](){
+                return true;}
+           ,[](){
+                std::cout << "dashboard stuff" << std::endl;
+            });
+            this->commanndController->addCommands("dashboard","closedash","\uf042",[](){
+                return true;}
+           ,[](){
+                std::cout << "dashboard stuff" << std::endl;
             });
 
 
