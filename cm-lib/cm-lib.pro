@@ -27,6 +27,7 @@ INCLUDEPATH += source
 SOURCES += \
         source/Data/data-decorator.cpp \
         source/Data/date-time-decorator.cpp \
+        source/Data/enumerator-decorator.cpp \
         source/Data/int-decorator.cpp \
         source/Data/string-decorator.cpp \
         source/LibClasses/libcommand.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
         cm-lib_global.h  \
         source/Data/data-decorator.h \
         source/Data/date-time-decorator.h \
+        source/Data/enumerator-decorator.h \
         source/Data/int-decorator.h \
         source/Data/string-decorator.h \
         source/LibClasses/libcommand.h \
