@@ -3,4 +3,5 @@ CommandButton 1.0 CommandButton.qml
 CommandBar 1.0 CommandBar.qml
 NavMenuComponet 1.0 NavMenuComponet.qml
 NavigationBar 1.0 NavigationBar.qml
+LevelComponet 1.0 LevelComponet.qml
 

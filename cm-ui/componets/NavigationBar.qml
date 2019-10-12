@@ -46,7 +46,7 @@ Item {
             }
             NavMenuComponet {
                 id: dashBoardMenu
-                iconCharacter:"\uf015"
+                iconCharacter:"\uf46a";
                 description: "Dashboard"
                 anchors.left: parent.left
                 anchors.right: parent.right

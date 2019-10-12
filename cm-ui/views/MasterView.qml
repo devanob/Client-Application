@@ -24,7 +24,7 @@ Window {
     visible: true
     width: 500
     height: 500
-    title: qsTr("MY App")
+    title: qsTr("Demo Application")
 
     NavigationBar {
         id: navigationBar
@@ -44,6 +44,38 @@ Window {
             right: parent.right
             left: navigationBar.right
         }
+        pushEnter: Transition {
+                PropertyAnimation {
+                    property: "opacity"
+                    from: 0
+                    to:1
+                    duration: 200
+                }
+            }
+            pushExit: Transition {
+                PropertyAnimation {
+                    property: "opacity"
+                    from: 1
+                    to:0
+                    duration: 200
+                }
+            }
+            popEnter: Transition {
+                PropertyAnimation {
+                    property: "opacity"
+                    from: 0
+                    to:1
+                    duration: 200
+                }
+            }
+            popExit: Transition {
+                PropertyAnimation {
+                    property: "opacity"
+                    from: 1
+                    to:0
+                    duration: 200
+                }
+            }
         //Component.onCompleted:contentFrame.replace("qrc:/views/DashboardView.qml");
         initialItem: Qt.resolvedUrl("qrc:views/SplashView.qml")
     }

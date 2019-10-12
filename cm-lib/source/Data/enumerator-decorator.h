@@ -3,6 +3,7 @@
 #include <QJsonValue>
 #include <QJsonObject>
 #include <QObject>
+#include <QVariant>
 #include <memory>
 #include <cm-lib_global.h>
 #include <Data/data-decorator.h>
@@ -19,7 +20,7 @@ namespace data {
                                 const std::map<int,QString> & mappedDescription = std::map<int, QString>()
                             );
 
-        ~EnumeratorDecorator();
+        ~EnumeratorDecorator() override;
         void setValue(int value);
         int value() const;
         QString description() const;

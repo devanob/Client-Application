@@ -1,5 +1,5 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#ifndef DATADECORATOR_H
+#define DATADECORATOR_H
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QObject>
