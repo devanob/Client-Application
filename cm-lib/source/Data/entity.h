@@ -4,6 +4,8 @@
 #include <QObject>
 #include <map>
 #include "cm-lib_global.h"
+#include "entity-collection-base.h"
+
 namespace cm {
 namespace data {
     class  CMLIBSHARED_EXPORT  Entity : public QObject
@@ -20,11 +22,14 @@ namespace data {
         protected:
             Entity* addChild(Entity* entity, const QString& key);
             DataDecorator* addDataItem(DataDecorator* data);
+            EntityCollectionBase* addChildCollection(EntityCollectionBase*
+            entityCollection);
             class Implemenation;
             std::unique_ptr<Implemenation> implemetation;
         signals:
             void childEntitiesChanged();
             void dataDecoratorChanged();
+            void childCollectionsChanged(const QString& collectionKey);
 
         public slots:
     };

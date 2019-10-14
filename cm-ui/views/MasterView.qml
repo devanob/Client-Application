@@ -11,13 +11,25 @@ Window {
 
         target: masterController.ui_navigationController
 
-        onGoCreateClientView: contentFrame.push("qrc:/views/CreateClientView.qml")
+        onGoCreateClientView: {
+            console.log(contentFrame.depth);
+            contentFrame.push("qrc:/views/CreateClientView.qml")
+        }
 
-        onGoDashboardView: contentFrame.push("qrc:/views/DashboardView.qml")
+        onGoDashboardView: {
+             console.log(contentFrame.depth);
+            contentFrame.push("qrc:/views/DashboardView.qml")
+        }
 
-        onGoEditClientView:contentFrame.push("qrc:/views/EditClientView.qml", {selectedClient:client})
+        onGoEditClientView:{
+             console.log(contentFrame.depth);
+            contentFrame.push("qrc:/views/EditClientView.qml", {selectedClient:client})
+        }
 
-        onGoFindClientView:contentFrame.push("qrc:/views/FindClientView.qml")
+        onGoFindClientView:{
+             console.log(contentFrame.depth);
+            contentFrame.push("qrc:/views/FindClientView.qml")
+        }
 
     }
     id: window

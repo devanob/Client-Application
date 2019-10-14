@@ -41,6 +41,7 @@ cm::LibClasses::LibCommand::~LibCommand(){
 void cm::LibClasses::LibCommand::executeProcedureHandlier()
 {
     this->implementation->executeProcedure();
+
 }
 
 const QString &cm::LibClasses::LibCommand::type() const

@@ -27,7 +27,9 @@ INCLUDEPATH += source
 SOURCES += \
         source/Data/data-decorator.cpp \
         source/Data/date-time-decorator.cpp \
+        source/Data/entity-collection-base.cpp \
         source/Data/entity.cpp \
+        source/Data/entitycollectionobject.cpp \
         source/Data/enumerator-decorator.cpp \
         source/Data/int-decorator.cpp \
         source/Data/string-decorator.cpp \
@@ -41,7 +43,9 @@ HEADERS += \
         cm-lib_global.h  \
         source/Data/data-decorator.h \
         source/Data/date-time-decorator.h \
+        source/Data/entity-collection-base.h \
         source/Data/entity.h \
+        source/Data/entitycollectionobject.h \
         source/Data/enumerator-decorator.h \
         source/Data/int-decorator.h \
         source/Data/string-decorator.h \

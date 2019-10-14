@@ -5,7 +5,7 @@ namespace data  {
 
 class EnumeratorDecorator::Implemenation{
     public:
-        Implemenation(EnumeratorDecorator* parent, int value, const std::map<int, QString>& mappedDescription):mappedDescription(mappedDescription), parent(parent){
+        Implemenation(EnumeratorDecorator* parent, int value, const std::map<int, QString>& mappedDescription):parent(parent), mappedDescription(mappedDescription){
             this->mappedValue =value;
 
         }
